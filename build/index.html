@@ -5,6 +5,15 @@
     <meta charset="utf-8">
     <title>Grid Reduction</title>
     <style>
+      @font-face {
+        font-family: Latin Modern Math;
+        src: url('latinmodern-math.otf');
+      }
+
+      * {
+        font-family: Latin Modern Math;
+      }
+
       html,
       body {
         padding: 0;
@@ -20,17 +29,46 @@
         width: 100%
       }
 
+      header {
+        position: fixed;
+        top: 20px;
+        color: #fff;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       button {
         position: fixed;
         z-index: 1;
-        left: 50%;
         bottom: 20px;
+        left: 50%;
         transform: translateX(-50%);
       }
     </style>
   </head>
 
   <body>
+    <header>
+      <h1>Tetrahedral Grid Simplification</h1>
+      <ul>
+        <li>
+          green: next collapse
+        </li>
+        <li>
+          red: surface vertex
+        </li>
+        <li>
+          blue: corner/edge vertex
+        </li>
+        <li>
+          white: inner vertex
+        </li>
+      </ul>
+    </header>
     <button>next collapse</button>
     <div class="canvas-container"></div>
     <script src="bundle.js"></script>
